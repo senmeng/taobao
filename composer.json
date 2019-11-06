@@ -1,0 +1,19 @@
+{
+    "name": "mengsen/taobao",
+    "description": "淘宝客、淘宝联盟、淘宝API",
+    "authors": [
+        {
+            "name": "mengsen",
+            "email": "626512443@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "mengsen\\": [
+                "src/"
+            ]
+        }
+    }
+}
