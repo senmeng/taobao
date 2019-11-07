@@ -27,6 +27,16 @@ class TopClient
         return $this->appkey;
     }
 
+    public function setGatewayUrl($gatewayUrl)
+    {
+        $this->gatewayUrl = $gatewayUrl;
+    }
+
+    public function setFormat($format)
+    {
+        $this->format = $format;
+    }
+
     // 请求
     public function execute($url, $param)
     {
@@ -35,18 +45,21 @@ class TopClient
         $param["v"] = $this->apiVersion;
         $param["format"] = $this->format;
         $param["sign_method"] = $this->signMethod;
-        $param["timestamp"] = date("Y-m-d H:i:s");
-
+        $param["timestamp"] = date('Y-m-d H:i:s');
         $param['method'] = $url;
+
         //生成签名
-        $sign = Util::createSign($param);
+        $sign = Util::createSign($param, $this->secretKey);
         $strParam = Util::createStrParam($param);
 
         $strParam .= 'sign=' . $sign;
-        $url = 'http://gw.api.tbsandbox.com/router/rest?' . $strParam;
-        echo $url;
+        $url = $this->gatewayUrl . '?' . $strParam;
+
+        // echo $url;
+
         $result = file_get_contents($url);
         $result = json_decode($result);
+
         return $result;
     }
 }
