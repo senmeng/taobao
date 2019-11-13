@@ -58,7 +58,7 @@ class TopClient
         // echo $url;
 
         $result = file_get_contents($url);
-        $result = json_decode($result);
+        $result = json_decode($result, true);
 
         return $result;
     }
