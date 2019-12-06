@@ -1,8 +1,8 @@
 <?php
 
-namespace mengsen;
+namespace mengsen\taobao;
 
-use mengsen\Util;
+use mengsen\taobao\Util;
 
 class TopClient
 {

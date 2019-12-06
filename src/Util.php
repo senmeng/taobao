@@ -1,6 +1,6 @@
 <?php
 
-namespace mengsen;
+namespace mengsen\taobao;
 
 class Util
 {
