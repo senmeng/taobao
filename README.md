@@ -6,7 +6,7 @@
     namespace app\common\factory;
     use mengsen\taobao\TopClient;
 
-    class Jd
+    class Taobao
     {
         private static $obj = null;
         public static function getInstance()
@@ -22,8 +22,8 @@
 
 
 DEMO
-
-    $app = Jindong::getInstance();
+    
+    $app = Taobao::getInstance();
     $res = $app->execute('taobao.union.open.promotion.common.get', [
         'promotionCodeReq' => [
             'siteId' => '1937243904',
